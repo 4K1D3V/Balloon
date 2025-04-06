@@ -1,0 +1,52 @@
+destinations:
+  village:
+    x: 100
+    y: 80
+    z: 100
+    control1:
+      x: 50
+      y: 95
+      z: 50
+    control2:
+      x: 75
+      y: 100
+      z: 75
+  mountain:
+    x: 200
+    y: 120
+    z: 300
+    control1:
+      x: 150
+      y: 135
+      z: 150
+    control2:
+      x: 175
+      y: 140
+      z: 225
+balloons:
+  red_small:
+    color: "RED_WOOL"
+    size: 1.0
+    capacity: 1
+    speed: 3
+    basket: "OAK_PLANKS"
+    fuel: 1
+    max_health: 10
+  blue_large:
+    color: "BLUE_WOOL"
+    size: 2.0
+    capacity: 4
+    speed: 1
+    basket: "DARK_OAK_PLANKS"
+    fuel: 2
+    max_health: 20
+cooldown: 60
+wind_strength: 1.0
+wind_rain_multiplier: 2.0
+fuel_wind_threshold: 1.5
+fuel_wind_extra: 1
+fuel_reserve_max: 2
+repair_cost:
+  coal: 1
+  wool: 2
+crash_cooldown: 300

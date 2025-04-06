@@ -1,0 +1,11 @@
+name: Balloon
+version: '1.0.0'
+main: gg.kite.core.Main
+api-version: '1.21'
+authors: [ KiteGG ]
+website: https://ks.akii.pro
+depend: [PacketEvents]
+commands:
+  balloon:
+    description: Open the balloon travel GUI or travel to a destination
+    usage: /<command> [destination]

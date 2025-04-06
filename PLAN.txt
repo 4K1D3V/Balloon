@@ -1,0 +1,81 @@
+Overview
+--------
+This plugin allows players to spawn and ride a hot air balloon that transports them to predefined destinations in a Minecraft server. It uses packet manipulation for a smooth, client-side visual experience, leveraging modern libraries like PacketEvents, ProtocolLib, ItemsAdder-API for custom models.
+
+Goals
+-----
+1. Recreate a lost plugin where players can hop into a hot air balloon and travel to a set destination.
+2. Provide a visually appealing and smooth travel animation without requiring resource packs.
+3. Make the plugin configurable and extensible for server administrators.
+
+Features
+--------
+1. Core Functionality
+   - Command: `/balloon [destination]` to spawn a hot air balloon and travel.
+   - Visual: A client-side balloon (BlockDisplay entity) that rises and moves smoothly.
+   - Transport: Teleports the player to a destination after a 3-second animation.
+
+2. Enhancements
+   - Configurable destinations stored in `config.yml`.
+   - Multi-block balloon structure (e.g., basket + balloon) using multiple BlockDisplay entities.
+   - Particle effects (e.g., flame under the balloon) for immersion.
+   - Optional physical interaction (e.g., right-click an ArmorStand to board).
+
+3. Technical Details
+   - PacketEvents for packet manipulation (spawning, moving, destroying entities).
+   - Lombok to reduce boilerplate code.
+   - Guava for utility collections (e.g., ImmutableMap for destinations).
+   - ProtocolLib as a fallback or optional dependency.
+
+Development Roadmap
+-------------------
+1. Phase 1: Basic Implementation (Current)
+   - Command to spawn a single BlockDisplay balloon.
+   - Smooth upward animation using PacketEvents.
+   - Teleport to hardcoded destinations.
+
+2. Phase 2: Configuration and Visuals
+   - Add `config.yml` for destinations (x, y, z coordinates).
+   - Implement multi-block balloon structure.
+   - Add particle effects (flame/cloud).
+
+3. Phase 3: Interaction and Polish
+   - Add physical entity (e.g., ArmorStand) for right-click interaction.
+   - Smooth flight path (e.g., curved trajectory to destination).
+   - Cooldown or fuel system (e.g., requires coal).
+
+Dependencies
+------------
+- Spigot-API (1.21.1)
+- PacketEvents (2.7.0)
+- ProtocolLib (4.8.0)
+- Lombok (1.18.38)
+- Guava (33.4.6-jre)
+- ItemsAdder (4.0.2-beta-release-11)
+
+
+src/main/java/
+├── gg.kite.core/
+│   ├── Main.java
+│   ├── listeners/
+│   │   └── ListenerManager.java
+│   ├── api/
+│   │   ├── ParticleManager.java
+│   │   └── SoundManager.java
+│   ├── command/
+│   │   └── BalloonCommand.java
+│   ├── config/
+│   │   └── ConfigManager.java
+│   ├── core/
+│   │   ├── Balloon.java
+│   │   ├── BalloonAnimation.java
+│   │   ├── BalloonGUIManager.java
+│   ├── hooks/
+│   │   └── ItemsAdder.java
+│   └── util/
+│       ├── LocationUtil.java
+│       └── Message.java
+src/main/resources/
+├── config.yml
+├── message.yml
+└── plugin.yml
